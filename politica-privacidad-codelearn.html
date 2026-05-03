@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Política de Privacidad — CodeLearn</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blue-900: #0D47A1;
+    --blue-800: #1565C0;
+    --blue-600: #1E88E5;
+    --blue-100: #E3F2FD;
+    --blue-50:  #F0F7FF;
+    --ink:      #0F1B2D;
+    --ink-mid:  #3D4F63;
+    --ink-soft: #6B7F96;
+    --rule:     #D6E4F0;
+    --white:    #FFFFFF;
+    --cream:    #FAFCFF;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--ink-mid);
+    background: var(--cream);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── Header ───────────────────────────────────────────── */
+  header {
+    background: var(--blue-800);
+    color: var(--white);
+    padding: 64px 0 56px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  header::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 360px; height: 360px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.05);
+  }
+
+  header::after {
+    content: '';
+    position: absolute;
+    bottom: -60px; left: -40px;
+    width: 240px; height: 240px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.04);
+  }
+
+  .header-inner {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 32px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .app-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 100px;
+    padding: 6px 16px 6px 10px;
+    margin-bottom: 28px;
+  }
+
+  .app-icon {
+    width: 32px; height: 32px;
+    background: var(--white);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  .app-icon svg { width: 20px; height: 20px; }
+
+  .app-badge span {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: rgba(255,255,255,0.9);
+  }
+
+  header h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(32px, 5vw, 48px);
+    font-weight: 400;
+    line-height: 1.15;
+    color: var(--white);
+    margin-bottom: 16px;
+  }
+
+  header h1 em {
+    font-style: italic;
+    color: #90CAF9;
+  }
+
+  .header-meta {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-top: 24px;
+  }
+
+  .meta-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.7);
+  }
+
+  .meta-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: #64B5F6;
+    flex-shrink: 0;
+  }
+
+  /* ── Layout principal ─────────────────────────────────── */
+  .container {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  main {
+    padding: 64px 0 96px;
+  }
+
+  /* ── Índice ───────────────────────────────────────────── */
+  .toc {
+    background: var(--blue-50);
+    border: 1px solid var(--blue-100);
+    border-left: 4px solid var(--blue-800);
+    border-radius: 0 12px 12px 0;
+    padding: 28px 32px;
+    margin-bottom: 56px;
+  }
+
+  .toc-title {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--blue-800);
+    margin-bottom: 16px;
+  }
+
+  .toc ol {
+    list-style: none;
+    counter-reset: toc;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px 24px;
+  }
+
+  @media (max-width: 540px) {
+    .toc ol { grid-template-columns: 1fr; }
+  }
+
+  .toc li {
+    counter-increment: toc;
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    font-size: 14px;
+  }
+
+  .toc li::before {
+    content: counter(toc, decimal-leading-zero);
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--blue-600);
+    flex-shrink: 0;
+    width: 20px;
+  }
+
+  .toc a {
+    color: var(--ink-mid);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .toc a:hover { color: var(--blue-800); }
+
+  /* ── Secciones ────────────────────────────────────────── */
+  section {
+    margin-bottom: 52px;
+    padding-bottom: 52px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .section-number {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--blue-600);
+    margin-bottom: 8px;
+  }
+
+  h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 26px;
+    font-weight: 400;
+    color: var(--ink);
+    line-height: 1.25;
+    margin-bottom: 20px;
+  }
+
+  p {
+    margin-bottom: 16px;
+    font-size: 15.5px;
+  }
+
+  p:last-child { margin-bottom: 0; }
+
+  /* ── Listas ───────────────────────────────────────────── */
+  ul.policy-list {
+    list-style: none;
+    margin: 16px 0 20px;
+  }
+
+  ul.policy-list li {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    font-size: 15.5px;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  ul.policy-list li:last-child { border-bottom: none; }
+
+  ul.policy-list li::before {
+    content: '';
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--blue-600);
+    margin-top: 9px;
+    flex-shrink: 0;
+  }
+
+  /* ── Card de contacto ─────────────────────────────────── */
+  .contact-card {
+    background: var(--blue-800);
+    border-radius: 16px;
+    padding: 36px 40px;
+    color: var(--white);
+    margin-top: 24px;
+  }
+
+  .contact-card h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 22px;
+    font-weight: 400;
+    margin-bottom: 12px;
+    color: var(--white);
+  }
+
+  .contact-card p {
+    font-size: 15px;
+    color: rgba(255,255,255,0.75);
+    margin-bottom: 20px;
+  }
+
+  .contact-email {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 8px;
+    padding: 10px 18px;
+    color: var(--white);
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  .contact-email:hover { background: rgba(255,255,255,0.2); }
+
+  /* ── Highlight box ────────────────────────────────────── */
+  .highlight {
+    background: var(--blue-50);
+    border-left: 3px solid var(--blue-600);
+    border-radius: 0 8px 8px 0;
+    padding: 18px 22px;
+    margin: 20px 0;
+    font-size: 15px;
+  }
+
+  /* ── Footer ───────────────────────────────────────────── */
+  footer {
+    background: var(--ink);
+    color: rgba(255,255,255,0.45);
+    text-align: center;
+    padding: 32px;
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  footer strong {
+    color: rgba(255,255,255,0.75);
+    font-weight: 500;
+  }
+
+  /* ── Responsive ───────────────────────────────────────── */
+  @media (max-width: 600px) {
+    .header-inner, .container { padding: 0 20px; }
+    header { padding: 44px 0 40px; }
+    main { padding: 44px 0 72px; }
+    .toc { padding: 22px 20px; }
+    .contact-card { padding: 28px 24px; }
+    h2 { font-size: 22px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════════════
+     HEADER
+═══════════════════════════════════════════════════════ -->
+<header>
+  <div class="header-inner">
+
+    <div class="app-badge">
+      <div class="app-icon">
+        <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M6 5C4.5 5 4 6 4 7V9C4 10 3.5 10.5 3 10.5C3.5 10.5 4 11 4 12V14C4 15 4.5 16 6 16" stroke="#1565C0" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M14 5C15.5 5 16 6 16 7V9C16 10 16.5 10.5 17 10.5C16.5 10.5 16 11 16 12V14C16 15 15.5 16 14 16" stroke="#1565C0" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M8 10.5H12" stroke="#1E88E5" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M8 13H12" stroke="#1E88E5" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <span>CodeLearn App</span>
+    </div>
+
+    <h1>Política de <em>Privacidad</em></h1>
+
+    <div class="header-meta">
+      <div class="meta-item">
+        <div class="meta-dot"></div>
+        Versión 1.0
+      </div>
+      <div class="meta-item">
+        <div class="meta-dot"></div>
+        Última actualización: Enero 2025
+      </div>
+      <div class="meta-item">
+        <div class="meta-dot"></div>
+        Aplicación educativa Android
+      </div>
+    </div>
+
+  </div>
+</header>
+
+<!-- ══════════════════════════════════════════════════════
+     MAIN
+═══════════════════════════════════════════════════════ -->
+<main>
+<div class="container">
+
+  <!-- Índice -->
+  <nav class="toc" aria-label="Tabla de contenidos">
+    <div class="toc-title">Contenido de esta política</div>
+    <ol>
+      <li><a href="#informacion">Información que recopilamos</a></li>
+      <li><a href="#uso">Uso de la información</a></li>
+      <li><a href="#terceros">Servicios de terceros</a></li>
+      <li><a href="#menores">Privacidad de menores</a></li>
+      <li><a href="#seguridad">Seguridad de los datos</a></li>
+      <li><a href="#derechos">Tus derechos</a></li>
+      <li><a href="#cambios">Cambios a esta política</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ol>
+  </nav>
+
+  <!-- Introducción -->
+  <section id="intro">
+    <div class="section-number">Introducción</div>
+    <h2>Tu privacidad es nuestra prioridad</h2>
+    <p>
+      Bienvenido a <strong>CodeLearn</strong>, una aplicación educativa diseñada para enseñar
+      los fundamentos de programación a jóvenes a través de lecciones interactivas y evaluaciones.
+      Esta Política de Privacidad describe cómo tratamos la información relacionada con el uso
+      de nuestra aplicación móvil para Android.
+    </p>
+    <p>
+      Al descargar o utilizar CodeLearn, aceptas las prácticas descritas en esta política.
+      Si no estás de acuerdo con alguno de sus términos, te pedimos que no utilices la aplicación.
+    </p>
+    <div class="highlight">
+      <strong>Resumen clave:</strong> CodeLearn es una aplicación completamente offline.
+      No recopilamos, almacenamos ni transmitimos datos personales identificables a ningún servidor externo.
+    </div>
+  </section>
+
+  <!-- Sección 1 -->
+  <section id="informacion">
+    <div class="section-number">01 — Información</div>
+    <h2>Información que recopilamos</h2>
+    <p>
+      CodeLearn está diseñada con un principio de privacidad por defecto. La aplicación
+      <strong>no requiere registro, cuenta de usuario ni inicio de sesión</strong> para funcionar.
+    </p>
+    <p>Los únicos datos que se generan son de uso local en tu dispositivo:</p>
+    <ul class="policy-list">
+      <li>Progreso dentro de las lecciones (guardado localmente en el dispositivo)</li>
+      <li>Resultados de los tests y puntuaciones obtenidas (guardados localmente)</li>
+      <li>Preferencias de uso de la aplicación (guardadas localmente)</li>
+    </ul>
+    <p>
+      Estos datos <strong>nunca salen de tu dispositivo</strong>. No contamos con servidores
+      propios que reciban información de los usuarios. Si desinstala la aplicación, todos
+      estos datos se eliminan automáticamente.
+    </p>
+    <p>
+      <strong>No recopilamos</strong> nombre, correo electrónico, número de teléfono,
+      ubicación geográfica, datos biométricos, ni ningún otro dato de carácter personal.
+    </p>
+  </section>
+
+  <!-- Sección 2 -->
+  <section id="uso">
+    <div class="section-number">02 — Uso</div>
+    <h2>Uso de la información</h2>
+    <p>
+      Dado que no recopilamos datos personales, el uso de información se limita
+      exclusivamente a lo siguiente:
+    </p>
+    <ul class="policy-list">
+      <li>Mostrar tu progreso dentro de la propia aplicación</li>
+      <li>Guardar los resultados de los tests para que puedas consultarlos</li>
+      <li>Personalizar la experiencia de aprendizaje según tus avances previos</li>
+    </ul>
+    <p>
+      En ningún caso utilizamos información con fines publicitarios, de análisis
+      comercial, venta a terceros ni cualquier otro propósito distinto al funcionamiento
+      educativo de la aplicación.
+    </p>
+  </section>
+
+  <!-- Sección 3 -->
+  <section id="terceros">
+    <div class="section-number">03 — Terceros</div>
+    <h2>Servicios de terceros</h2>
+    <p>
+      CodeLearn <strong>no integra SDKs de publicidad, analíticas de comportamiento,
+      redes sociales ni servicios de seguimiento</strong> (tracking) de ningún tipo.
+    </p>
+    <p>
+      La aplicación puede estar disponible a través de <strong>Google Play Store</strong>.
+      La descarga y distribución a través de esta plataforma está sujeta a las políticas
+      de privacidad de Google, sobre las cuales no tenemos control. Te recomendamos
+      revisar la <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">
+      Política de Privacidad de Google</a>.
+    </p>
+    <p>
+      Más allá del canal de distribución, la aplicación instalada en tu dispositivo
+      no establece comunicación con ningún servidor de terceros.
+    </p>
+  </section>
+
+  <!-- Sección 4 -->
+  <section id="menores">
+    <div class="section-number">04 — Menores</div>
+    <h2>Privacidad de menores de edad</h2>
+    <p>
+      CodeLearn está específicamente diseñada para ser utilizada por <strong>jóvenes
+      estudiantes</strong>, incluyendo menores de edad. Por esta razón tomamos con
+      especial seriedad la protección de su privacidad.
+    </p>
+    <ul class="policy-list">
+      <li>No recopilamos ningún dato personal de menores de edad</li>
+      <li>No requerimos que los usuarios se identifiquen con nombre u otro dato personal</li>
+      <li>No mostramos publicidad de ningún tipo dentro de la aplicación</li>
+      <li>No incluimos enlaces externos ni redes sociales dentro de la app</li>
+      <li>El contenido educativo está supervisado y es apropiado para todas las edades</li>
+    </ul>
+    <p>
+      Si eres padre, madre o tutor legal y tienes alguna preocupación sobre el uso
+      de la aplicación por parte de un menor a tu cargo, puedes contactarnos a través
+      del correo indicado en la sección de Contacto.
+    </p>
+  </section>
+
+  <!-- Sección 5 -->
+  <section id="seguridad">
+    <div class="section-number">05 — Seguridad</div>
+    <h2>Seguridad de los datos</h2>
+    <p>
+      Dado que todos los datos se almacenan localmente en el dispositivo del usuario
+      y no se transmiten a ningún servidor, los riesgos de exposición de datos son
+      mínimos por diseño.
+    </p>
+    <p>
+      La seguridad del dispositivo donde está instalada la aplicación (código de
+      desbloqueo, cifrado del dispositivo, etc.) es responsabilidad del usuario o de
+      su tutor legal. Recomendamos mantener el sistema operativo Android actualizado
+      para beneficiarse de los últimos parches de seguridad de Google.
+    </p>
+    <p>
+      No obstante lo anterior, ningún sistema es completamente infalible. Si detectas
+      algún comportamiento anómalo en la aplicación, te animamos a reportárnoslo.
+    </p>
+  </section>
+
+  <!-- Sección 6 -->
+  <section id="derechos">
+    <div class="section-number">06 — Derechos</div>
+    <h2>Tus derechos</h2>
+    <p>
+      Aunque no recopilamos datos personales, reconocemos y respetamos los derechos
+      que la legislación aplicable (incluyendo el RGPD en Europa y leyes equivalentes
+      en México y Latinoamérica) otorga a los usuarios:
+    </p>
+    <ul class="policy-list">
+      <li><strong>Acceso:</strong> puedes ver en todo momento tu progreso dentro de la propia app</li>
+      <li><strong>Eliminación:</strong> desinstalar la aplicación borra automáticamente todos los datos locales</li>
+      <li><strong>Portabilidad:</strong> los datos de progreso son accesibles directamente en el dispositivo</li>
+      <li><strong>Objeción:</strong> puedes dejar de usar la aplicación en cualquier momento sin consecuencias</li>
+    </ul>
+    <p>
+      Para ejercer cualquiera de estos derechos o resolver dudas al respecto,
+      puedes contactarnos mediante los datos indicados al final de este documento.
+    </p>
+  </section>
+
+  <!-- Sección 7 -->
+  <section id="cambios">
+    <div class="section-number">07 — Cambios</div>
+    <h2>Cambios a esta política</h2>
+    <p>
+      Podemos actualizar esta Política de Privacidad ocasionalmente para reflejar
+      cambios en la aplicación, en la legislación aplicable o en nuestras prácticas.
+      Cuando lo hagamos:
+    </p>
+    <ul class="policy-list">
+      <li>Actualizaremos la fecha de "Última actualización" al inicio de este documento</li>
+      <li>Notificaremos los cambios relevantes a través de una actualización de la app en Play Store</li>
+      <li>Si los cambios son significativos, lo indicaremos de forma destacada dentro de la aplicación</li>
+    </ul>
+    <p>
+      Te recomendamos revisar periódicamente esta página. El uso continuado de la
+      aplicación tras la publicación de cambios implica la aceptación de la política revisada.
+    </p>
+  </section>
+
+  <!-- Sección 8 — Contacto -->
+  <section id="contacto">
+    <div class="section-number">08 — Contacto</div>
+    <h2>¿Tienes alguna pregunta?</h2>
+    <p>
+      Si tienes dudas, comentarios o solicitudes relacionadas con esta Política de
+      Privacidad o con el tratamiento de datos en CodeLearn, no dudes en escribirnos.
+      Nos comprometemos a responder en un plazo máximo de <strong>30 días hábiles</strong>.
+    </p>
+
+    <div class="contact-card">
+      <h3>Ponerse en contacto</h3>
+      <p>Estamos disponibles para atender cualquier consulta relacionada con privacidad y seguridad de datos.</p>
+      <a class="contact-email" href="mailto:adrian231998@gmail.com">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="1" y="3" width="14" height="10" rx="2" stroke="white" stroke-width="1.4" fill="none"/>
+          <path d="M1 5.5L8 9.5L15 5.5" stroke="white" stroke-width="1.4" stroke-linecap="round"/>
+        </svg>
+        adrian231998@gmail.com
+      </a>
+    </div>
+  </section>
+
+</div>
+</main>
+
+<!-- ══════════════════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════════════════ -->
+<footer>
+  <p><strong>CodeLearn</strong> · Política de Privacidad · Versión 1.0</p>
+  <p>Última actualización: Enero 2025 · Este documento aplica a la aplicación Android CodeLearn.</p>
+</footer>
+
+</body>
+</html>
